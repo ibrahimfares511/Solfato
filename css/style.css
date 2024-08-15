@@ -1,0 +1,306 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap");
+
+:root {
+  --hue: 223;
+  --primary-color: #00a66a;
+  --secondary-color: #f04b25;
+  --main-gradient: linear-gradient(to right, #00a66a, #f04b25);
+  --trans-dur: 0.6s;
+  --trans-timing: cubic-bezier(0.65, 0, 0.35, 1);
+  --theme-background: 255, 255, 255;
+  --theme-color: #111827;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(var(--theme-background), 1);
+  color: var(--theme-color);
+  transition: background-color var(--trans-dur), color var(--trans-dur);
+  overflow-x: hidden;
+  font-family: "Cairo", sans-serif !important;
+  height: 3000px;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin-bottom: 0;
+}
+input:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.main_content {
+  margin-top: 96px;
+}
+
+/* Start Header */
+.main-header {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header {
+  background-image: url("../assests/home-cover.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 125px;
+}
+
+/* Start Navbar */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: var(--trans-dur) var(--trans-timing);
+  z-index: 999;
+}
+
+nav.scrolling {
+  background-color: rgba(var(--theme-background), 0.1);
+  backdrop-filter: blur(5px);
+  top: -45px;
+}
+
+nav .top-navbar {
+  background: var(--primary-color);
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2rem !important;
+}
+
+.navbar .brand {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  display: block;
+  max-width: 140px;
+}
+
+.logo img {
+  width: 100%;
+}
+
+.navbar .links a {
+  font-weight: bold;
+}
+
+.navbar .navbar-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.navbar .navbar-buttons a,
+.custom-button {
+  padding: 0.5em 0.7em;
+  text-decoration: none;
+  background-color: transparent;
+  border-radius: 0.3em;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.5s;
+  font-weight: 400;
+  font-size: 17px;
+  border: 1px solid;
+  font-family: inherit;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  z-index: 1;
+}
+
+.navbar .navbar-buttons a::before,
+.navbar .navbar-buttons a::after,
+.custom-button::before,
+.custom-button::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  background-color: var(--primary-color);
+  transition: 0.6s ease;
+}
+
+.navbar .navbar-buttons a::before,
+.custom-button::before {
+  top: -1em;
+  left: -1em;
+}
+
+.navbar .navbar-buttons a::after,
+.custom-button::after {
+  left: calc(100% + 1em);
+  top: calc(100% + 1em);
+}
+
+.navbar .navbar-buttons a:hover::before,
+.navbar .navbar-buttons a:hover::after,
+.custom-button:hover::before,
+.custom-button:hover::after {
+  height: 410px;
+  width: 410px;
+}
+
+.navbar .navbar-buttons a:hover,
+.custom-button:hover {
+  color: #fff;
+}
+
+.navbar .navbar-buttons a:active,
+.custom-button:active {
+  filter: brightness(0.8);
+}
+
+/* Burger Button */
+.menu {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  padding: 0;
+  width: 75px;
+}
+
+.line {
+  fill: none;
+  stroke: var(--theme-color);
+  stroke-width: 3;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line1 {
+  stroke-dasharray: 60 207;
+  stroke-width: 3;
+}
+
+.line2 {
+  stroke-dasharray: 60 60;
+  stroke-width: 3;
+}
+
+.line3 {
+  stroke-dasharray: 60 207;
+  stroke-width: 3;
+}
+
+.opened .line1 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 3;
+}
+
+.opened .line2 {
+  stroke-dasharray: 1 60;
+  stroke-dashoffset: -30;
+  stroke-width: 3;
+}
+
+.opened .line3 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 3;
+}
+
+/* Responsive */
+@media screen and (max-width: 767.98px) {
+  .main-header {
+    width: auto;
+    height: auto;
+  }
+
+  .navbar .brand {
+    flex-grow: 1;
+    justify-content: space-between;
+  }
+
+  .logo {
+    width: 90px;
+  }
+  .navbar .links {
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    backdrop-filter: blur(3px);
+    transform: translateY(-400px);
+    opacity: 0;
+    transition: var(--trans-dur) var(--trans-timing);
+  }
+  .navbar .links.opened {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Start Main Section */
+main.main-section {
+  width: 100vw;
+  height: calc(100vh - 125px);
+}
+main.main-section .container,
+main.main-section .row {
+  height: 100%;
+  position: relative;
+}
+
+.main-section .home-banner img {
+  width: 150%;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-section h1 {
+  font-weight: 800;
+}
+.main-section p {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  opacity: 0.7;
+}
+
+/* Responsive */
+@media screen and (max-width: 991.98px) {
+  .main-section .row {
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    padding: 10px;
+  }
+
+  .main-section .home-banner img {
+    width: 100%;
+  }
+
+  .main-section h1,
+  .main-section p {
+    padding: 0.5rem;
+  }
+}
+/* End Main Section */
