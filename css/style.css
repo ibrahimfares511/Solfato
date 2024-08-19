@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap");
 
 :root {
-  --hue: 223;
+  --hue: 00A66A;
   --primary-color: #00a66a;
   --secondary-color: #f04b25;
   --second-bg: #f1f5f7;
@@ -360,3 +360,54 @@ section .section-title p {
   }
 }
 /* End Features Section */
+
+/* Start Overview Section */
+.overview {
+  position: relative;
+  background-image: url(../assests/pattern1.png);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.overview .row {
+  padding: 5rem 0;
+}
+.overview h2 {
+  font-weight: 900;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+.overview h4 {
+  font-weight: 700;
+}
+.overview ul {
+  list-style: none;
+}
+.overview ul li {
+  margin: 1rem 0;
+  font-weight: 600;
+  color: #000;
+  opacity: 0.8;
+  position: relative;
+}
+.overview ul li::before {
+  content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23F04B25"><path d="M12 21c-.26 0-.51-.1-.71-.29a.996.996 0 0 1 0-1.41l7.29-7.29-7.29-7.29a.996.996 0 1 1 1.41-1.41l8 8c.39.39.39 1.02 0 1.41l-8 8c-.2.2-.45.29-.71.29ZM4 21c-.26 0-.51-.1-.71-.29a.996.996 0 0 1 0-1.41l7.29-7.29-7.29-7.3A.996.996 0 1 1 4.7 3.3l8 8c.39.39.39 1.02 0 1.41l-8 8c-.2.2-.45.29-.71.29Z"></path></svg>');
+  position: absolute;
+  top: 3px;
+  left: -25px;
+  width: 20px;
+  height: 20px;
+}
+.overview .img-wrapper img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 1rem;
+  box-shadow: 0 0.125rem 1rem 1px rgb(0 0 0 / 11%);
+  object-fit: cover;
+}
+.overview a {
+  display: inline-block;
+}
+/* End Overview Section */
