@@ -1,0 +1,37 @@
+body {
+  direction: rtl;
+}
+
+ol,
+ul {
+  padding-left: 0 !important;
+  padding-right: 2rem;
+}
+
+section.features > svg {
+  left: auto;
+  right: -10px;
+}
+
+.overview ul li::before {
+  right: -25px;
+  transform: rotateY(180deg);
+}
+
+.all-features .section-title svg {
+  left: auto;
+  right: -100px;
+}
+.all-features > svg {
+  right: auto;
+  left: 10px;
+}
+
+.pricing-table .table-body ul li {
+  padding-left: 0 !important;
+  padding-right: 2.5rem;
+}
+.pricing-table .table-body ul li:before {
+  right: 0;
+  left: auto;
+}
