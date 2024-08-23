@@ -548,10 +548,11 @@ section .section-title p {
   position: absolute;
 }
 .pricing > .bg-1 {
-  top: -60px;
+  top: -45px;
 }
 .pricing > .bg-2 {
-  top: 0;
+  bottom: 0;
+  height: 100%;
 }
 .pricing .container,
 .pricing-table {
@@ -595,6 +596,7 @@ section .section-title p {
 }
 .pricing-table .table-body ul {
   list-style: none;
+  margin-bottom: 2rem;
 }
 .pricing-table .table-body ul li {
   padding: 0.75rem;
@@ -668,3 +670,14 @@ footer.footer a {
   display: inline-block;
 }
 /* End Footer */
+
+section {
+  opacity: 0;
+  transform: translateY(300px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
