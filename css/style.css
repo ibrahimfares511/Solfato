@@ -86,7 +86,7 @@ nav .top-navbar {
 }
 
 .navbar .brand {
-  padding-top: 2rem !important;
+  padding-top: 1rem !important;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -279,7 +279,7 @@ nav.scrolling .navbar .brand {
 /* Start Main Section */
 main.main-section {
   width: 100vw;
-  height: calc(100vh - 125px);
+  height: 100vh;
 }
 main.main-section .container,
 main.main-section .row {
@@ -303,6 +303,11 @@ main.main-section .row {
 }
 
 /* Responsive */
+@media (min-width: 992px) {
+  main.main-section {
+    height: calc(100vh - 125px);
+  }
+}
 @media screen and (max-width: 991.98px) {
   .main-section .row {
     flex-direction: column-reverse;
@@ -332,6 +337,7 @@ section.features > svg {
   top: 10px;
   left: -10px;
   width: 120px;
+  z-index: -1;
 }
 section .section-title h4 {
   font-weight: 700;
@@ -546,9 +552,12 @@ section .section-title p {
 }
 .pricing > img {
   position: absolute;
+  width: 100%;
+  object-fit: cover;
 }
 .pricing > .bg-1 {
-  top: -45px;
+  top: -50px;
+  height: 400px;
 }
 .pricing > .bg-2 {
   bottom: 0;
@@ -646,6 +655,11 @@ section .section-title p {
   margin-bottom: 10px;
   color: #bbbec2;
   font-size: 1.2rem;
+}
+@media screen and (max-width: 557px) {
+  .pricing > .bg-1 {
+    height: 800px;
+  }
 }
 
 /* End Pricing Section */
