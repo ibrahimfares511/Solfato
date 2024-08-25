@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f4ff;
+            margin: 0;
+        }
+
+        .testimonial-card {
+            background-color: #f5f8ff;
+            border-radius: 20px;
+            padding: 30px 20px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '';
+            width: 100px;
+            height: 100px;
+            background-color: #f5f8ff;
+            border-radius: 50%;
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            border: 5px solid #fff;
+        }
+
+        .testimonial-card h3 {
+            margin-top: 40px;
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .testimonial-card p {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .stars {
+            color: #ffc107;
+            font-size: 18px;
+        }
+    </style>
+    <title>Testimonial Card</title>
+</head>
+<body>
+
+<div class="testimonial-card">
+    <img src="https://via.placeholder.com/80" alt="User Photo">
+    <h3>Darlene Robertson</h3>
+    <p>you'll get the best Of what you put in. The team is working at their best to provide us variety Of...</p>
+    <div class="stars">★★★★★</div>
+</div>
+
+</body>
+</html>
